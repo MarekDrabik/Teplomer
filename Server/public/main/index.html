@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:,">
+  <link rel="stylesheet" type="text/css" href="/main/main.css">
+</head>
+
+<body onload="currentState.renderHtml()">
+
+	<img id="vozikImg" src="main/vozik.png" >
+	
+  <div style="position: absolute; top: 0px; left: 0px;">
+  	
+    <div id="navigation-flex">
+      <div id="alarmDiv" class="alarm" onclick="loadAlarmIframe()">
+        <input id="alarmInput" type="checkbox" name="alarm" style="display: none;">
+        <span>ALARM:</span>
+        <mark id="alarmMark"><span id="alarmValue"></span></mark>
+      </div>
+      <div>
+        <input id="errorBtn" type="button" value="Error!">
+      </div> 
+    </div> 
+
+    <div id="kontrolka"></div>
+    
+  	<div class="grid-vozik">
+
+  	  <div id="rpi_subgrid">
+        <div class="contact" id="last">last</div>
+        <div class="contact" id="lastTime">-</div>
+        <div ><img id="envelope" src="main/envelope.png" height="10vh"></div>
+        <div><span id="rpi">-</span><span>&#8451;</span></div>
+        <div class="contact" id="next">next</div>
+        <div class="contact" id="nextTime">-</div>
+        <div></div>
+        <div><span id="signal">-</span><span>/31</span><img id="signalImg" src="main/signal.png" height="9vh"></div>
+      </div>
+  	  <div></div>
+
+      <div id="rightPanel">
+        <div id="weather">
+          <div><span id="outTemp">-</span> <span class="unitC">&#8451;&nbsp;</span></div> 
+          <div><span id="outHumid">-</span> <span class="unitHumid">%&nbsp;</span></div>
+          <div><span id="outHI">-</span> <span class="unitHI">HI</span></div>
+        </div>
+        <div id="tolerFlex" >
+          <div id="tolerHighDiv" onclick="this.querySelector('input').click()">
+            <input value=0 id="tolerHighInput" class='toler' type="hidden" name="tolHighButton" onclick="loadTolerIframe(true)">
+            <mark id="tolerHighMark" style="background-color: #FF6F61"><span id="tolerHighText" style="color: white;">0</span> <span style="color: #FAE03C;">HI</span></mark>
+          </div>
+          <div id="tepImgDiv">
+            <img src="main/teplomer.png">
+          </div>
+          <div id="tolerLowDiv" onclick="this.querySelector('input').click()">
+            <input value=0 id="tolerLowInput" class='toler' type="hidden" name="tolLowButton" onclick="loadTolerIframe(false)">
+            <mark id="tolerLowMark" style="background-color: #91A8D0"><span id="tolerLowText" style="color: white;">0</span> <span style="color: #FAE03C;">HI</span></mark>
+          </div>
+        </div>
+
+        <div id="postmanBar">
+
+          <div id="postmanBtn">
+            <div class="text" onclick="this.querySelector('input').click()">
+              <div>SEND</div>
+              <input id="messageBtn" type="hidden" onclick="postman.send()">
+            </div>
+            <div class="cross" onclick="this.querySelector('input').click()">
+              <img src="../cross.png" style="width: 3vh;">
+              <input id="cancelMsgBtn" type="hidden" onclick="postman.unload();">
+            </div>
+          </div>
+
+          <div id="messageStatus">status</div> 
+
+        </div>
+
+      </div>
+
+  	  <div id="box6" class="boxy" onclick="this.querySelector('input').click()">
+        <input type="checkbox" name="box6" value="box6" onclick="postman.box_onchange(this)" style="display: none">
+        <div class="boxNum">6</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;&nbsp;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%&nbsp;</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+  	  <div id="box4" class="boxy" onclick="this.querySelector('input').click()" >
+        <input type="checkbox" name="box4" value="box4" onclick="postman.box_onchange(this)"  style="display: none">
+        <div class="boxNum">4</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+  	  <div></div>
+  	  <!-- <div></div> -->
+  	  <div id="box3" class="boxy" onclick="this.querySelector('input').click()">
+        <input type="checkbox" name="box3" value="box3" onclick="postman.box_onchange(this)" style="display: none">
+        <div class="boxNum">3</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+  	  <div></div>
+  	  
+  	  <div id="box5" class="boxy" onclick="this.querySelector('input').click()">
+        <input type="checkbox" name="box5" value="box5" onclick="postman.box_onchange(this)" style="display: none">
+        <div class="boxNum">5</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+  	  <div id="box2" class="boxy" onclick="this.querySelector('input').click()">
+        <input type="checkbox" name="box2" value="box2" onclick="postman.box_onchange(this)" style="display: none">
+        <div class="boxNum">2</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+      <div></div>
+  	  <!-- <div></div> -->
+  	  <div id="box1" class="boxy" onclick="this.querySelector('input').click()">
+        <input type="checkbox" name="box1" value="box1" onclick="postman.box_onchange(this)" style="display: none">
+        <div class="boxNum">1</div>
+        <div class="flexBox">
+          <div class="markSmall"><mark><span class="tempBox">-</span> <span class="unitC">&#8451;</span></mark></div> 
+          <div class="markSmall"><mark><span class="humidBox">-</span> <span class="unitHumid">%</span></mark></div>
+          <div class="markBig"><mark><span class="hiBox">-</span> <span class="unitHI">HI</span></mark></div>
+        </div>
+      </div>
+  	  <div></div>
+  	  <!-- <div></div> -->
+  	</div>
+
+  	<div id="space"></div>
+
+  	<div id="grid-panelSliders">
+      <div class="lavyokraj"></div>
+  		<div></div>
+  		<div id="Temp">TEMP</div>
+  		<!-- <div></div> -->
+      <div></div>
+  		<div id="Gps">GPS</div>
+      <!-- <div></div> -->
+      <div class="pravyokraj"></div>
+
+      <div class="lavyokraj"></div>
+      <div></div>
+  		<div id="mesTemp" >Measure</div>
+  		<div id="infTemp" >Inform</div>
+  		<div></div>
+  		<div id="mesGps" >Measure</div>
+  		<div id="infGps" >Inform</div>
+      <div class="pravyokraj"></div>
+
+      <div class="lavyokraj"></div>
+      <div ></div>
+      <div class="txt" id="mesTempValueDiv" ><mark id="mesTempValueMark" >x</mark></div>
+      <div class="txt" id="infTempValueDiv" ><mark id="infTempValueMark" >x</mark></div>
+      <div></div>
+      <div class="txt" id="mesGpsValueDiv" ><mark id="mesGpsValueMark" >x</mark></div>
+      <div class="txt" id="infGpsValueDiv" ><mark id="infGpsValueMark" >x</mark></div>
+      <div class="pravyokraj"></div>
+  	</div>
+
+  	<div id="grid-sliders">
+
+      <div class="lavyokraj"></div>
+  		<div id="intText">
+        <div>6s</div>
+        <div>24s</div>
+        <div>1.5m</div>
+        <div>6.5m</div>
+        <div>30m</div>
+        <div>1.5h</div>
+        <div>7h</div>
+        <div>OFF</div>
+      </div>	
+  		<div id=MT class=sliderContainer><input oninput="postman.slider_oninput(this)" id="iMTslider" class="slider" type="range" orient="vertical" value=0 /></div>
+  		<div id=IT class=sliderContainer><input oninput="postman.slider_oninput(this)" id="iITslider" class="slider" type="range" orient="vertical" value=0 /></div>
+  		<div></div>
+  		<div id=MG class=sliderContainer><input oninput="postman.slider_oninput(this)" id="iMGslider" class="slider" type="range" orient="vertical" value=0 disabled/></div>
+  		<div id=IG class=sliderContainer><input oninput="postman.slider_oninput(this)" id="iIGslider" class="slider" type="range" orient="vertical" value=0 disabled/></div>
+      <div class="pravyokraj"></div>
+  	</div>
+
+  </div> <!-- maindiv -->
+</body>
+
+<script src="main/generic_functions.js" defer></script>
+<script src="main/initializations.js" defer></script>
+<script src="main/specific_functions.js" defer></script>
+<script src="main/currentState.js" defer></script>
+<script src="main/MessageTimer.js" defer></script>
+<script src="main/sendingMode.js" defer></script>
+<script src="main/messageRequestLoop.js" defer></script>
+<script src="main/run.js" defer></script>
+
+</html>
+

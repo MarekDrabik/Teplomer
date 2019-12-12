@@ -1,0 +1,40 @@
+body {
+  background-color: white;
+  height: 40vh;
+}
+
+.panel {
+  display: flex;
+  width: 100%;
+  position: fixed;
+
+  justify-content: space-around;
+  left: 0px;
+  bottom: 10vh;
+}
+#cancel img {
+  height: 11vh;
+}
+#cancel {
+  display: flex;
+  justify-content: center;
+  border-style: dashed;
+  background-color: red;
+  /*bottom: 2.2vh;*/
+  /*left: 12vw;*/
+  opacity: 0.9;
+}
+#off {
+  font-family: Courier New;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
+  /*line-height: 55px;*/
+  background-color: grey;
+  border-style: dashed;
+  height: 11vh;
+  width: 30vw;
+  /*left: 36vw;*/
+  /*bottom: 5vh;*/
+  opacity: 0.9;
+}

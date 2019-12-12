@@ -1,0 +1,8 @@
+{
+  "name" : "",
+  "password": "",
+  "jwtPrivateKey" : "",
+  "domain": "",
+  "port": "",
+  "passphrase": ""
+}

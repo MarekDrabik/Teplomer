@@ -1,0 +1,96 @@
+<style>
+    body {
+      font-family: Courier New;
+      font-weight: bold;
+      background-color: gray;
+    }
+    #HItable-grid {
+      font-family: Courier New;
+      font-weight: bold;
+      font-size: 2.4vh;
+
+      display: grid;
+      grid-template-columns: repeat(8, auto);
+      grid-template-rows: repeat(58, 3vh);
+      grid-gap: 2px;
+      background-color: gray;
+    }
+
+    #HItable-grid * {
+      font-family: Courier New;
+      background-color: white;
+      text-align: center;
+      line-height: 20px;
+    }
+    #roh {
+      display: flex;
+      justify-content: center;
+      background-color: white;
+
+    }
+    #HItable-grid .hum {
+      font-size: 2.4vh;
+      color: #91A8D0;
+      background-color: black;
+      /*box-shadow:3px 3px 5px pink inset;*/
+      border-bottom-style: solid;
+
+    }
+    #HItable-grid div:nth-child(8n +1):not(#roh){
+      font-size: 2.4vh;
+      color: #FF6F61;
+      background-color: black;
+      border-right-style: solid;
+    }
+    #confirm {
+      position: fixed;
+      font-family: Courier New;
+      font-size: 5vh;
+      font-weight: bold;
+      text-align: center;
+      line-height: 55px;
+      background-color: #5cd65c;
+      border-style: dashed;
+      height: 8vh;
+      width: 30vw;
+      left: 55vw;
+      bottom: 5vh;
+      opacity: 0.9;
+    }
+    #cancel {
+      display: flex;
+      position:fixed;
+      justify-content: center;
+      border-style: dashed;
+      background-color: red;
+      bottom: 5.2vh;
+      left: 20vw;
+      opacity: 0.9;
+    }
+    /*plus/minus disabled for now:*/
+    #plusMinus {
+      display: flex;
+      position:fixed;
+      background-color: transparent;
+      width: 15vw;
+      height: 38vw;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      bottom: 7vh;
+      right: 7vw;
+      opacity: 0.9;
+    }
+    #plus>img, #minus>img{
+      border-style: dashed;
+      /*border-width: 1px;*/
+      height: 15vw;
+      width: 15vw;
+      background-color: gray;
+      box-shadow: 4px 4px 4px;
+    }
+
+
+
+
+  </style>

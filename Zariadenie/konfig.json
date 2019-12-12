@@ -1,0 +1,10 @@
+{
+  "aktBoxy": "11111111",
+  "intervalInfGps": 123456789,
+  "intervalInfTep": 12,
+  "intervalMerGps": 123456789,
+  "intervalMerTep": 6,
+  "onOffAlarmPark": "00000000",
+  "tolerHigh": 34,
+  "tolerLow": 5
+}

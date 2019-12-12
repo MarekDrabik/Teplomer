@@ -1,0 +1,8 @@
+{
+  "name" : "tepServer_name",
+  "password" : "tepServer_password",
+  "jwtPrivateKey": "tepServer_jwtPrivateKey",
+  "domain": "tepServer_domain",
+  "port": "tepServer_port",
+  "passphrase": "passphrase_ssl"
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>login</title>
+  
+  <style type="text/css">
+    
+    /*PC*/ 
+    @media only screen and (min-width: 400px) {
+      form * {
+        height: 5vh;
+        width: 300px;
+        font-size: 3vh;
+      } 
+    }
+     /*android*/
+    @media only screen and (max-width: 400px) {
+      form * {
+        height: 7vw;
+        width: 55vw;
+        /*margin-top: 1vw;*/
+        font-size: 5vw;
+      } 
+    }
+    form {
+      position: relative;
+      display: flex;
+      top: 7vw;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+
+    
+  </style>
+
+</head>
+<body>
+  <form style="display: flex; flex-direction: column;" autocomplete="on">
+    <label for="name" >Name</label>
+    <input type="text-field" name="name" autocomplete="on">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="pass" autocomplete="on">
+    <br>
+    <input type="submit" name="btn">
+    <p id="status" style="color: red"></p>
+  </form>
+  
+  <script type="text/javascript">
+    const loginForm = document.querySelector('form');
+    const status = document.getElementById('status');
+    loginForm.addEventListener('submit', login);
+
+    function login(e) {
+      status.innerHTML = "Verifying..."
+      e.preventDefault();
+      const loginDetails = {
+        name : e.target.name.value,
+        password : e.target.password.value
+      };
+
+      const url = '/login/';
+      const options = {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        credentials: 'include', // include, *same-origin, omit
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(loginDetails)
+      };
+
+
+      fetch(url, options)
+      .then(function(response) {
+        if (response.ok) {
+          window.location = "/home"
+        } else {
+          return response.text();
+        } 
+      }).then(function(data) {
+        if (data) status.innerHTML = data;
+      })
+      .catch(function (err) {
+        status.innerHTML = err;
+        throw err;
+      });
+    }
+
+  </script>
+</body>
+</html>
