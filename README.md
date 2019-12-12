@@ -9,7 +9,7 @@ Súčasťou projektu je aj webová aplikácia cez ktorú si brat vie skontrolova
 Účelom zariadnia je poskytnúť dodatočné monitorovanie ako ďalší prvok ochrany k tomu čo už brat manuálne robí. Tým sa zmenšuje pravdepodobnosť, že by sa krízová situácia "prehliadla". 
 
 
-<br><br>
+<br><br><br>
 
 ## Hlavné prvky
 
