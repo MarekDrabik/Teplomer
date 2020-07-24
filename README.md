@@ -43,11 +43,11 @@ V tomto repository nájdete kód celého projektu:
 
 ## Detailný popis Web Aplikácie
 
-* Web aplikácia zobrazuje základné informácie o stave vo vozíku.
+1. Web aplikácia zobrazuje základné informácie o stave vo vozíku.
 
 <img float="center" src=".doc/informacieApp.png" />
 
-* A Ponúka možnosť zmeniť nastavenia Teplomera.<br>
+2. Ponúka možnosť zmeniť nastavenia Teplomera.<br>
 _Zmenené hodnoty blikajú nazeleno v pozadí so súčastným nastavením. Nastavenia sa odosielajú rázovo tlačidlom SEND a potom čakajú na serveri kým ich Teplomer neprevezme._
    
 <img float="center" src=".doc/instrukcieApp.png" />
