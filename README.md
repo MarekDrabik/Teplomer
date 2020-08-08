@@ -6,11 +6,26 @@ Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbo
 <br><br>
 <img align="left" src="/.doc/box.png" width="175">
 Na pomoc tejto situacii som vytvoril zariadenie ktore teplotu v kazdom boxe monitoruje pomocou tepelnych senzorov. V pripade prekrocenia stanoveneho limitu v niektorom z nich, upozorni majitela tak, ze mu zavola na telefon.
-K tomuto zariadeniu som vytvoril webovú aplikáciu ktorá poskytuje pohodlné nastavovanie zariadenia na diaľku a zobrazuje aktuálny stav v boxoch.
 
 Zakladnou myslienkou riesenia tohto problemu bolo teda monitorovanie teploty vo vozíku a upozornenie uzívatela na krízovú situáciu.
 
-Aby som moje zariadenie predstavil co naefektivnejsim sposobom. 
+Mojim riesenim je zariadenie pocitac raspberry pi s dalsou potrebnou elektronikou ulozene v kompaktnej krabicke. Fyzicka manipulacia so zariadenim je nenarocna, krabicku staci vlozit do predripraveneho priestoru vo voziku, pripojit kabel od senzorov a zapnut zariadenie jednoduchym tlacidlom. 
+
+Zariadenie je napajene z vlastnej baterie kedze pocas standardnej prevadzky nie je k dispozicii elektricka siet.
+
+V kazdom z boxov je senzor na meranie teploty a vlhkosti. Zariadenie z tychto hodnot rata pocitovu teplotu, co je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
+
+Ak namerana pocitova teplota v niektorom z boxov prekroci zdrave hodnoty, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. Tato funkcionalita je k dispozicii vdaka GSM modulu s vlastnou SIM kartou.
+
+Sucastou tohto riesenia je webova aplikacia ktora umoznuje uzivatelovi kedykolvek pohodlne zmenit nastavenie zariadenia. 
+Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty ktore uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
+
+Aplikacia okrem toho zobrazuje aktualne namerane hodnoty v jednotlivych boxoch ako aj aktualne nastavenie zariadenia.
+
+Bateria zariadenia vydrzi priblizne 24 hodín neustáleho behu, avšak preteky trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. 
+
+Algoritmus lalala.
+
 
 1 V idealnom pripade, je zariadenie na monitorovanie byt mobilne, skladne a čo najmenej narocne na obsluhu. 
 RIESENIE: * Teplomer je počítač **Raspberry Pi** s ďalšími pridanými modulmi <img align="right" src=".doc/hw.png" width="300" /> a batériou, ktorý je uložený v plastovej krabičke. Táto krabička sa vkladá do zadnej časti prívesného vozíka kde sa zapojí na kabeláž senzorov. Po spustení, stlačením tlačidla, je už ďalej ovládané webovou aplikáciou a žiadna ďalšia manipulácia nie je nutná.
