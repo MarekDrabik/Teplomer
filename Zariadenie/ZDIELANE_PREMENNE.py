@@ -8,7 +8,7 @@ import threading, logging, logging.handlers
 
 
 MOZNEIntervalySprav = (6, 12, 24, 48, 96, 192, 384, 768, 1536, 3072, 6144, 12288, 24576, 49152, 123456789)
-            #insomnia je < MIN_ODDYCH
+#insomnia je < MIN_ODDYCH
 #0 (vzdy som vymazal)
 # konfiguracia (defaultna):
 #MOZNEIntervalySpravText = ('vždy', '4s', '15s', '1m', '4m', '8m', '16m', '32m', '1h', '2h', '4h', '8h', 'vypni Teplomer')
@@ -34,11 +34,11 @@ CAS_KNTRL_OSCIL = 300 #ak sa teplota neustalila po tejto dobe, spusti alarm (tep
                     #pes ma krizovu teplotu a je nepokojny, v tom pripade je dobre spustit alarm.
 CAS_KNTRL_ZASEK = 1200 #ak zasiela senzor uplne rovnake hodnoty po tuto dobu spusti alarm (senzor zaseknuty)
                       # pravdepodobnost, ze to nastane je mala a je asi lepsie velke cislo nech to zbytocne nerobi plany poplach
-                      # a kontroly aj tak bezia takze jedine, ze by sa bol senzor naozaj zasekol v krizovej situacii by to mohol byt problem - velmi mala sanca
+		      # riziko je male aj pretoze, ze stale bezia kontroly na ostanych senzoroch 
 rozptylTep = 0.5 # aky rozptyl teploty (+/-)(takze hodnoty medzi x-0.4:x+0.4) este tolerujeme a povazujeme za normalnu fluktuaciu vzduchu
 rozptylVlh = 6 # ak su tieto cisla prilis male, mozme mat velmi dlhe intervaly kontroly oscilacii lebo vsetko 
-              #sa bude povazovat za podozrivu oscilacii teploty.
-              #ak prilis velke tak mozme odignorovat pripady ked je teplota uz zcasu-nacas nezdrava ale my sme ju zpriemerovali na zdravu
+              #sa bude povazovat za pondozrivu oscilaciu teploty.
+              #ak prilis velke, tak mozme odignorovat pripady ked je teplota uz zcasu-nacas nezdrava ale my sme ju zpriemerovali na zdravu
 ZVACSENIE_KVOLI_MOZNYM_CHYBAM = 1.5 #pozri specialne.vyberValidneMerania()
 POCET_DOVOLENYCH_OUTLIERS = 0 #to su teploty mimo reprezentat. zostavy
 MINIMALNA_TOLEROVANA_KVALITA = 1 - (POCET_DOVOLENYCH_OUTLIERS / VELKOST_OKNA_MERANI)
