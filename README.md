@@ -3,6 +3,7 @@
 <img align="right" src="/.doc/trailer.png" width="300">
 Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 <br>
+
 Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
 V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
 Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
@@ -15,9 +16,8 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
-	1. Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
-	2. Boxy, ktoré je treba aktuálne monitorovať.
-
+  * Interval hodnôt pocitovej teploty, ktorý bude považovaný za zdravý
+  * Boxy, ktoré je treba aktuálne monitorovať
 <img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
 * Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
@@ -26,7 +26,7 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
 Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným poplachom a, v horšom prípade, prehliadnutiu kritických situácii.
 
-<img align="left" src=".doc/app_resized.png" width="180" />
+<img align="left" src=".doc/app_resized.png" width="210" />
 
 * Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
