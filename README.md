@@ -1,30 +1,27 @@
 # Teplomer IOT
 
 <img align="right" src="/.doc/trailer.png" width="300">
-Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch s funkciou alarmu. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. 
-Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára rizoko prehriatia v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním/zatváraním dverí. Okrem toho, teplota občas stúpne "neintuitívne", napríklad keď je pes nervózny, čo majiteľ nedokáže predvídať.
+Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch s funkciou alarmu. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára rizoko prehriatia v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním/zatváraním dverí. Teplota v boxe nezávisí iba od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať. Riziko je teda veľké a závislé nie len od poctivosti majiteľa ale často nepredvídateľné.
 <br><br>
+
+Na pomoc tejto situácii som teda prišiel s myšlienkou monitorovania teploty automatizovane, ktorú sa mi aj podarilo zrealizovať.
 <img align="left" src="/.doc/box.png" width="175">
-Na pomoc tejto situacii som vytvoril zariadenie ktore teplotu v kazdom boxe monitoruje pomocou tepelnych senzorov. V pripade prekrocenia stanoveneho limitu v niektorom z nich, upozorni majitela tak, ze mu zavola na telefon.
 
-Zakladnou myslienkou riesenia tohto problemu bolo teda monitorovanie teploty vo vozíku a upozornenie uzívatela na krízovú situáciu.
+Výsledkom je kompaktné zariadenie ktoré monitoruje komfort psov pomocou teplotného senzoru v každom boxe. V pripade prekrocenia stanoveneho limitu v niektorom z nich, upozorni majitela tak, ze mu zavola na telefon.
 
-Mojim riesenim je zariadenie pocitac raspberry pi s dalsou potrebnou elektronikou ulozene v kompaktnej krabicke. Fyzicka manipulacia so zariadenim je nenarocna, krabicku staci vlozit do predripraveneho priestoru vo voziku, pripojit kabel od senzorov a zapnut zariadenie jednoduchym tlacidlom. 
+Zariadením je počítač raspberry pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. Inštalácia zariadenie je jednoduchá a rýchla, krabičku stačí vlozit do predripraveneho priestoru vo voziku, pripojit kábel napájania senzorov a zapnut zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
+Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty (podchladenie / prehriatie ) ktoré uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
+Zariadenie nemeria iba teplotu, ale aj vlhkost, a z tychto velicin rata takzvanu [**pocitovú teplotu**](https://en.wikipedia.org/wiki/Heat_index). To je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
+Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
 
-Zariadenie je napajene z vlastnej baterie kedze pocas standardnej prevadzky nie je k dispozicii elektricka siet.
+Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
-V kazdom z boxov je senzor na meranie teploty a vlhkosti. Zariadenie z tychto hodnot rata pocitovu teplotu, co je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
+Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky trvajú ale často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, aby ušetrilo batériu. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
 
-Ak namerana pocitova teplota v niektorom z boxov prekroci zdrave hodnoty, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. Tato funkcionalita je k dispozicii vdaka GSM modulu s vlastnou SIM kartou.
+Rovnakým spôsobom je možné šetrenie mobilných dát ktoré sú spotrebované pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
 
-Sucastou tohto riesenia je webova aplikacia ktora umoznuje uzivatelovi kedykolvek pohodlne zmenit nastavenie zariadenia. 
-Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty ktore uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
+Algoritmus lalala. vietor, dych, vyberanie psov.
 
-Aplikacia okrem toho zobrazuje aktualne namerane hodnoty v jednotlivych boxoch ako aj aktualne nastavenie zariadenia.
-
-Bateria zariadenia vydrzi priblizne 24 hodín neustáleho behu, avšak preteky trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. 
-
-Algoritmus lalala.
 
 
 1 V idealnom pripade, je zariadenie na monitorovanie byt mobilne, skladne a čo najmenej narocne na obsluhu. 
@@ -34,7 +31,7 @@ RIESENIE: * Teplomer je počítač **Raspberry Pi** s ďalšími pridanými modu
 
 
 
- * meria sa nielen teplota ale aj vlhkosť z čoho sa potom počíta takzvaná [**pocitová teplota**](https://en.wikipedia.org/wiki/Heat_index), čo je relevatnejší ukazovateľ komfortu tela
+ * meria sa nielen teplota ale aj vlhkosť z čoho sa potom počíta takzvaná , čo je relevatnejší ukazovateľ komfortu tela
  * zariadenie upozorňuje užívateľa na problém **zavolaním na telefón**
  * počítač kontroluje nielen to či je teplota na senzoroch v zdravom rozsahu, ale aj to či sa niektorý senzor nezasekol, alebo či je teplota ustálená 
  * k dispozícii je **webová aplikácia** ktorá zobrazuje informácie Teplomera a ponúka možnosti jeho nastavenia
