@@ -4,69 +4,39 @@
 Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 <br><br>
 
-Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré teplotu v boxoch monitoruje elektronicky, pomocou teplotných senzorov. V prípade, že teplota dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
+Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
+V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
+Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
+Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
+
 <img align="left" src="/.doc/box.png" width="175" >
 
-* Zariadením je počítač raspberry pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, pripojiť kábel napájania senzorov a zapnut zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
-* Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty (podchladenie / prehriatie ) ktoré uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
+* Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
+Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
+pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a 
+ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
-* Zariadenie nemeria iba teplotu, ale aj vlhkost, a z tychto velicin rata takzvanu [**pocitovú teplotu**](https://en.wikipedia.org/wiki/Heat_index). To je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
+* Užívateľ si pomocou aplikácie určí základné nastavenia: 
+	1. Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
+	2. Boxy, ktoré je treba aktuálne monitorovať.
 
 * Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
 
-* Zariadenie berie pri vyhodnocovaní "zdravosti" nameraných dát do úvahy aj náhodné vplyvy, ako napr. vietor, manipulácia s boxom, psí dych na senzore. Pretože tie by mohli spôsobiť falošný poplach alebo, v horšom prípade, prehliadnutie kritických situácií.
+* Kontrola zdravosti prostredia nie je úplne triviálna. Namerné hodnoty na senzore nemusia stále odpovedať stavu v celom boxe. 
+Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
+Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným poplachom a, v horšom prípade, prehliadnutiu kritických situácii.
 
 * Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
-* Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, aby ušetrilo batériu. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
+* Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
 
-8 Rovnakým spôsobom je možné šetrenie mobilných dát ktoré sú spotrebované pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
+* Podobným spôsobom je umožnené šetrenie mobilných dát ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
+<img align="right" src=".doc/hw.png" width="300" />
+<img align="right" src=".doc/screenshot.png" width="180" />
 
- 
-
-
-
-1 V idealnom pripade, je zariadenie na monitorovanie byt mobilne, skladne a čo najmenej narocne na obsluhu. 
-RIESENIE: * Teplomer je počítač **Raspberry Pi** s ďalšími pridanými modulmi <img align="right" src=".doc/hw.png" width="300" /> a batériou, ktorý je uložený v plastovej krabičke. Táto krabička sa vkladá do zadnej časti prívesného vozíka kde sa zapojí na kabeláž senzorov. Po spustení, stlačením tlačidla, je už ďalej ovládané webovou aplikáciou a žiadna ďalšia manipulácia nie je nutná.
-
-ľ. Zariadenie potrebuje vlastny zdroj elektrickej energie vzhladom na to, ze vozik je pocas pretekov zvacsa odparkovany mimo dosahu elektrickej siete.
-
-
-
- * meria sa nielen teplota ale aj vlhkosť z čoho sa potom počíta takzvaná , čo je relevatnejší ukazovateľ komfortu tela
- * zariadenie upozorňuje užívateľa na problém **zavolaním na telefón**
- * počítač kontroluje nielen to či je teplota na senzoroch v zdravom rozsahu, ale aj to či sa niektorý senzor nezasekol, alebo či je teplota ustálená 
- * k dispozícii je **webová aplikácia** ktorá zobrazuje informácie Teplomera a ponúka možnosti jeho nastavenia
-   * okrem iného, zobrazuje hlavne **teplotu a vlhkosť v jednotlivých boxoch**
-   * na **šetrenie batérie**, ktorá vydrží približne 24 hodín pri neustálom behu, je možné zvýšiť interval v akom má Teplomer merať a počítač sa potom sám vypne medzi týmito meraniami.
-   * na **šetrenie mobilných dát** je zase môžné prestaviť interval informovania
- 
-
-## Možnosť reálne vyskúšať <img align="right" src=".doc/screenshot.png" width="180" />
-Aplikácia je k dispozícii na vyskúšanie na adrese: https://87.197.183.237:5443/home <br>
-Na zobrazenie stránky je potrebné odsúhlasiť bezpečnostnú výnimku na certifikát.
-
-Ak o to teda máte záujem a dáte mi vedieť, tak ja zapnem aj Teplomer, aby aplikácia zobrazovala reálne dáta. <br>
-
-**Prihlasovacie údaje:** <br>
-meno: _teplomer_ <br>
-heslo: _Jk2;Ak1ma_ <br>
-
- 
-## Github Repository
+ ## Github Repository
 V tomto repository nájdete kód celého projektu:
 * [Zariadenie](https://github.com/MarekDrabik/Teplomer/tree/master/Zariadenie) - celý kód Teplomera, teda toho zariadenia ktoré je vložené do prívesného vozíka (Python)
 * [Server](https://github.com/MarekDrabik/Teplomer/tree/master/Server) - backend kód servera ktorý beží doma na druhom Raspberry Pi (Node.js) 
 * [Server/public](https://github.com/MarekDrabik/Teplomer/tree/master/Server/public) - frontend webová aplikácia (Javascript, html, css)
 
-
-## Detailný popis Web Aplikácie
-
-1. Web aplikácia zobrazuje základné informácie o stave vo vozíku.
-
-<img float="center" src=".doc/informacieApp.png" />
-
-2. Ponúka možnosť zmeniť nastavenia Teplomera.<br>
-_Zmenené hodnoty blikajú nazeleno v pozadí so súčastným nastavením. Nastavenia sa odosielajú rázovo tlačidlom SEND a potom čakajú na serveri kým ich Teplomer neprevezme._
-   
-<img float="center" src=".doc/instrukcieApp.png" />
