@@ -16,9 +16,8 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
-  * Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
-  * Boxy, ktoré je treba aktuálne monitorovať.
-
+  * Interval hodnôt pocitovej teploty, ktorý bude považovaný za zdravý
+  * Boxy, ktoré je treba aktuálne monitorovať
 <img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
 * Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
