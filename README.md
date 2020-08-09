@@ -1,15 +1,13 @@
 # Teplomer IOT
 
 <img align="right" src="/.doc/trailer.png" width="300">
-Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch s funkciou alarmu. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára rizoko prehriatia v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním/zatváraním dverí. Teplota v boxe nezávisí iba od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať. Riziko je teda veľké a závislé nie len od poctivosti majiteľa ale často nepredvídateľné.
+Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 <br><br>
 
-Na pomoc tejto situácii som teda prišiel s myšlienkou monitorovania teploty automatizovane, ktorú sa mi aj podarilo zrealizovať.
-<img align="left" src="/.doc/box.png" width="175">
+Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré teplotu v boxoch monitoruje elektronicky, pomocou teplotných senzorov. V prípade, že teplota dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
+<img align="left" src="/.doc/box.png" width="175" >
 
-Výsledkom je kompaktné zariadenie ktoré monitoruje komfort psov pomocou teplotného senzoru v každom boxe. V pripade prekrocenia stanoveneho limitu v niektorom z nich, upozorni majitela tak, ze mu zavola na telefon.
-
-* Zariadením je počítač raspberry pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. Inštalácia zariadenie je jednoduchá a rýchla, krabičku stačí vlozit do predripraveneho priestoru vo voziku, pripojit kábel napájania senzorov a zapnut zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
+* Zariadením je počítač raspberry pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, pripojiť kábel napájania senzorov a zapnut zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 * Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty (podchladenie / prehriatie ) ktoré uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
 
 * Zariadenie nemeria iba teplotu, ale aj vlhkost, a z tychto velicin rata takzvanu [**pocitovú teplotu**](https://en.wikipedia.org/wiki/Heat_index). To je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
