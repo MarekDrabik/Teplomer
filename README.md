@@ -9,7 +9,8 @@ V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatel
 Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
 Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
 
-<img align="right" src="/.doc/box.png" width="175"><img align="right" src="/.doc/inside.png" width="175">
+<img align="right" src=".doc/hw.png" width="300"/>
+<img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
 * Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
 Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
@@ -31,7 +32,6 @@ Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným 
 * Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
 
 * Podobným spôsobom je umožnené šetrenie mobilných dát ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
-<img align="right" src=".doc/hw.png" width="300" />
 <img align="right" src=".doc/screenshot.png" width="180" />
 
  ## Github Repository
