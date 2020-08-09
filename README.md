@@ -6,7 +6,7 @@ Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov p
 
 Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
 V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
-Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej **[pocitovej teploty]**(https://en.wikipedia.org/wiki/Heat_index).
+Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index) .
 Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
 <img align="right" src=".doc/hw.png" width="300"/>
 
@@ -16,8 +16,8 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
-	1. Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
-	2. Boxy, ktoré je treba aktuálne monitorovať.
+** Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
+** Boxy, ktoré je treba aktuálne monitorovať.
 
 <img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
