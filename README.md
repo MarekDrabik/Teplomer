@@ -9,9 +9,7 @@ V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatel
 Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
 Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
 
-<img src="/.doc/box.png" width="175">
-<img src="/.doc/inside.png" width="175">
-<img src="/.doc/box.png" width="175">
+<img src="/.doc/box.png" width="175"><img src="/.doc/inside.png" width="175"><img src="/.doc/box.png" width="175">
 
 * Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
 Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
