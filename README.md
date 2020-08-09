@@ -34,6 +34,8 @@ Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným 
 
 * Podobným spôsobom je umožnené šetrenie mobilných dát ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
 <br><br><br>
+<br><br><br>
+<br><br><br>
 
  ## Github Repository
 V tomto repository nájdete kód celého projektu:
