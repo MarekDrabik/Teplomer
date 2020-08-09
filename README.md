@@ -21,24 +21,33 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 
 <img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
 
-* Ak nameraná pocitová teplota v niektorom z boxov prekročí stanovené hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
+* Ak nameraná pocitová teplota v niektorom z boxov prekročí stanovené hranice, zariadenie spustí poplach tak, že 
+užívateľovi zavolá na mobilný telefón. *Táto funkcionalita je k dispozicii vďaka [**GSM/GPRS modulu**](https://www.waveshare.com/gsm-gprs-gnss-hat.htm).*
 
-* Kontrola zdravosti prostredia nie je úplne triviálna. Namerné hodnoty na senzore nemusia stále odpovedať stavu v celom boxe. 
+* Kontrola zdravosti prostredia nie je úplne triviálna. Namerané hodnoty na senzore nemusia stále odpovedať stavu v celom boxe. 
 Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
 Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným poplachom a, v horšom prípade, prehliadnutiu kritických situácii.
 
 <img align="left" src=".doc/app2.png" width="280" />
 
-* Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
+* Zariadenie zasiela informácie o svojom nastavení na webovú aplikáciu v pravidelných intervaloch. Vďaka tomu si užívateľ môže 
+kedykoľvek pohodlne skontrolovať, že zariadenie funguje a že je správne nastavené. Okrem toho, aplikácia zobrazuje dalšie užitočné 
+informácie, najmä aktuálne namerané hodnoty v každom boxe.
 
-* Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
+* Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. 
+Spotreba batérie je nízka, vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. 
+Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozícii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, 
+čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za 3 minúty 
+sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. 
+*Táto funkcionalita je k dispozicii vdaka modulu [**WittyPi**](http://www.uugear.com/product/wittypi2).*
 
-* Podobným spôsobom je umožnené šetrenie mobilných dát ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
+* Podobným spôsobom je umožnené šetrenie mobilných dát, ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. 
+Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
 <br><br><br><br><br><br><br><br>
 
  ## Github Repository
 V tomto repository nájdete kód celého projektu:
-* [Zariadenie](https://github.com/MarekDrabik/Teplomer/tree/master/Zariadenie) - celý kód Teplomera, teda toho zariadenia ktoré je vložené do prívesného vozíka (Python)
-* [Server](https://github.com/MarekDrabik/Teplomer/tree/master/Server) - backend kód servera ktorý beží doma na druhom Raspberry Pi (Node.js) 
-* [Server/public](https://github.com/MarekDrabik/Teplomer/tree/master/Server/public) - frontend webová aplikácia (Javascript, html, css)
+* [Zariadenie](https://github.com/MarekDrabik/Teplomer/tree/master/Zariadenie) - kompletný kód hlavného zariadenia (Python)
+* [Server](https://github.com/MarekDrabik/Teplomer/tree/master/Server) - backend kód servera, ktorý umožňuje komunikáciu medzi zariadením a webovou aplikáciou (Node.js) 
+* [Server/public](https://github.com/MarekDrabik/Teplomer/tree/master/Server/public) - webová aplikácia (Javascript, html, css)
 
