@@ -16,11 +16,11 @@ Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do 
 pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a 
 ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
-<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
-
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
 	1. Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
 	2. Boxy, ktoré je treba aktuálne monitorovať.
+
+<img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
 * Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
 
