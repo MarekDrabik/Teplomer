@@ -10,7 +10,8 @@ Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila h
 Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
 
 <img align="right" src=".doc/hw.png" width="300"/>
-<img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
+
+<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
 
 * Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
 Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
