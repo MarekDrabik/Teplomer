@@ -1,7 +1,7 @@
-# Teplomer IOT
+# Teplomer IOT - zariadenie na monitorovanie teploty v psích boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
-Teplomer IOT je zariadenie na monitorovanie teploty v psích boxoch. Vytvoril som ho pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
+Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 <br><br>
 
 Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
@@ -9,7 +9,9 @@ V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatel
 Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
 Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
 
-<img align="left" src="/.doc/box.png" width="175" >
+<img align="left" src="/.doc/box.png" width="175">
+<img align="center" src="/.doc/inside.png" width="175">
+<img align="right" src="/.doc/box.png" width="175">
 
 * Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
 Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
