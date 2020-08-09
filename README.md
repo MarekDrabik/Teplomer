@@ -33,9 +33,9 @@ Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným 
 * Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. Spotreba batérie je nízka a vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozicii funkcia šetrenia batérie. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za každé 3 minúty sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. *Táto funkcionalita je k dispozicii vdaka modulu WittyPi.*
 
 * Podobným spôsobom je umožnené šetrenie mobilných dát ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
-<br><br><br>
-<br><br><br>
-<br><br><br>
+<br>
+<br>
+<br>
 
  ## Github Repository
 V tomto repository nájdete kód celého projektu:
