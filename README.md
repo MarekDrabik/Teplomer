@@ -12,7 +12,10 @@ Výsledkom je kompaktné zariadenie ktoré monitoruje komfort psov pomocou teplo
 Zariadením je počítač raspberry pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. Inštalácia zariadenie je jednoduchá a rýchla, krabičku stačí vlozit do predripraveneho priestoru vo voziku, pripojit kábel napájania senzorov a zapnut zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 Uzivatel si v nej navoli hranicne hodnoty pocitovej teploty (podchladenie / prehriatie ) ktoré uz nemaju byt tolerovane, a taktiez urci ktore konkretne boxy je treba monitorovat.
 Zariadenie nemeria iba teplotu, ale aj vlhkost, a z tychto velicin rata takzvanu [**pocitovú teplotu**](https://en.wikipedia.org/wiki/Heat_index). To je korektnejsi ukazovatel komfortu psieho tela ako len teplota samotna.
+
 Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
+
+Samotna kontrola zdravosti nameranej teploty nie je uplne trivialna. Ak by sme považovali každé meranie na senzore za teplotu v celom boxe, mohli by sme prehliadnuť aj kritické prípady. Napríklad, keď na senzor zafúka chladnejší vzduch tak to vyhodnotíme ako zdravú teplotu avšak v tom istom čase može byť teplota v zbytku boxu kritická a pes sa prehrieva. Algoritmus ktory vyhodnocuje tieto meranie, teda berie do uvahy nie len priemer hodnot ale aj oscilacie hodnot na to aby co najpresnejsie odhadol skutocny stav v boxe.
 
 Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
@@ -20,7 +23,7 @@ Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú si
 
 Rovnakým spôsobom je možné šetrenie mobilných dát ktoré sú spotrebované pri komunikácii medzi aplikáciou a zariadením. Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
 
-Algoritmus lalala. vietor, dych, vyberanie psov.
+ 
 
 
 
