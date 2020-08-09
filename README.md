@@ -11,12 +11,12 @@ Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotn�
 
 <img align="right" src=".doc/hw.png" width="300"/>
 
-<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
-
 * Zariadením je počítač Raspberry Pi, ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
 Inštalácia zariadenie je jednoduchá a rýchla. Krabičku stačí vložiť do predripraveného priestoru vo voziku, 
 pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a 
 ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
+
+<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
 
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
 	1. Interval hodnôt pocitovej teploty ktorý bude považovaný za zdravý
