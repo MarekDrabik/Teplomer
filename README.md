@@ -26,7 +26,7 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
 Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným poplachom a, v horšom prípade, prehliadnutiu kritických situácii.
 
-<img align="left" src=".doc/app_resized2.png" width="260" />
+<img align="left" src=".doc/app2.png" width="260" />
 
 * Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
