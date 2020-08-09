@@ -1,7 +1,7 @@
 # Teplomer IOT - zariadenie na monitorovanie teploty v psích boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
-Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa napríklad aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
+Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa, napríklad, aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 <br><br>
 
 Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
@@ -18,9 +18,10 @@ pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla
 * Užívateľ si pomocou aplikácie určí základné nastavenia: 
   * Interval hodnôt pocitovej teploty, ktorý bude považovaný za zdravý
   * Boxy, ktoré je treba aktuálne monitorovať
-<img align="right" src="/.doc/box.png" width="175"/><img align="right" src="/.doc/inside.png" width="175"/>
 
-* Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
+<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
+
+* Ak nameraná pocitová teplota v niektorom z boxov prekročí stanovené hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
 
 * Kontrola zdravosti prostredia nie je úplne triviálna. Namerné hodnoty na senzore nemusia stále odpovedať stavu v celom boxe. 
 Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
