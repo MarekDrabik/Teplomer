@@ -15,7 +15,7 @@ Zariadenie nemeria iba teplotu, ale aj vlhkost, a z tychto velicin rata takzvanu
 
 Ak namerana pocitova teplota v niektorom z boxov prekroci stanovene hranice, zariadenie spusti poplach tak, ze uzivatelovi zavola na mobilny telefon. *Tato funkcionalita je k dispozicii vdaka GPRS modulu s vlastnou SIM kartou.*
 
-Samotna kontrola zdravosti nameranej teploty nie je uplne trivialna. Ak by sme považovali každé meranie na senzore za teplotu v celom boxe, mohli by sme prehliadnuť aj kritické prípady. Napríklad, keď na senzor zafúka chladnejší vzduch tak to vyhodnotíme ako zdravú teplotu avšak v tom istom čase može byť teplota v zbytku boxu kritická a pes sa prehrieva. Algoritmus ktory vyhodnocuje tieto meranie, teda berie do uvahy nie len priemer hodnot ale aj oscilacie hodnot na to aby co najpresnejsie odhadol skutocny stav v boxe.
+Teplota namerana senzormi nemusi stale odpovedat skutocnej hodnote v boxe. Nahodne vplyvy ako vietor, manipulacia s boxom, psí dych na senzore môže spôsobiť nesprávne vyhodnotenie situácie. To môže mať za následok falošné poplachy alebo, čo je horšie, prehliadnutie kritických situácií. Z toho dovodu je implementovany algoritmus ktory zdravost teploty hodnoti statisticky. 
 
 Zariadenie zasiela informacie o svojom nastaveni na webovu aplikaciu v pravidelnych intervaloch. Vdaka tomu si uzivatel moze kedykolvek pohodlne skontrolovat, že zariadenie funguje a ze je spravne nastavene. Okrem toho, aplikacia zobrazuje dalsie uzitocne informacie, najme aktualne namerane hodnoty v kazdom boxe.
 
