@@ -1,53 +1,53 @@
-# Teplomer IOT
+# Teplomer IOT - zariadenie na monitorovanie teploty v psích boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
-Teplomer IOT je zariadenie ktoré som vytvoril pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, ale to zároveň spôsobuje starosti v teplejšom počasí. Psy sa môžu prehriať, keďže nemôžu regulovať svoju teplotu bez prísunu chladného vzduchu. Na to, aby boli v bezpečí, je treba pravidelne manuálne kontrolovať či je teplota primeraná, a prípadne ju regulavať otváraním a zatváraním dverí na vozíku.
-<br><br>
-<img align="left" src="/.doc/box.png" width="175">
-Toto zariadenie som vytvoril aby pomohlo s prevenciou takýchto situácií, ktoré môžu byť až život ohrozujúce. Teplomer meria teploty v boxoch a upozorní brata ak je v niektorom boxe príliš teplo alebo príliš zima tak, že mu zavolá na telefón.
-Súčasťou projektu je aj webová aplikácia cez ktorú si brat vie skontrolovať situáciu vo vozíku na diaľku, prípadne prestaviť parametre Teplomera.<br>
-Účelom zariadnia je poskytnúť dodatočné monitorovanie ako ďalší prvok ochrany k tomu čo už brat manuálne robí. Tým sa zmenšuje pravdepodobnosť, že by sa krízová situácia "prehliadla". 
+Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa, napríklad, aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
 
+Na pomoc v tejto situácii som teda vytvoril zariadenie ktoré boxy monitoruje elektronicky, pomocou teplotno-vlhkostných senzorov. 
+V prípade, že prostredie dosiahne nezdravé hodnoty, upozorní majiteľa zatelefonovaním. 
+Meria sa nie len teplota, ale aj vlhkosť, aby sa z týchto veličín odvodila hodnota takzvanej [**pocitovej teploty**](https://en.wikipedia.org/wiki/Heat_index).
+Tá je korektnejším ukazovateľom komfortu psieho tela ako len teplota samotná.
+<br>
+<img align="right" src=".doc/hw.png" width="300"/>
 
-<br><br><br>
+* Zariadením je počítač [**Raspberry Pi**](https://www.raspberrypi.org/products/raspberry-pi-zero-w/), ktorý je uložený v plastovej krabičke spolu s ďalšou potrebnou elektronikou. 
+**Inštalácia zariadenia je jednoduchá a rýchla**. Krabičku stačí vložiť do predripraveného priestoru vo vozíku, 
+pripojiť kábel napájania senzorov a zapnúť zariadenie stlačením tlačidla. Zariadenie je ďalej už sebestačné a 
+ďalšia interakcia s užívateľom prebiaha už len pomocou webovej aplikácie.
 
-## Hlavné prvky
+* Užívateľ si pomocou aplikácie určí **základné nastavenia**: 
+  * Interval hodnôt pocitovej teploty, ktorý bude považovaný za zdravý
+  * Boxy, ktoré je treba aktuálne monitorovať
 
- * Teplomer je počítač **Raspberry Pi** s ďalšími pridanými modulmi <img align="right" src=".doc/hw.png" width="300" /> a batériou, ktorý je uložený v plastovej krabičke. Táto krabička sa vkladá do zadnej časti prívesného vozíka kde sa zapojí na kabeláž senzorov a spustí stlačením tlačidla.
- * meria sa nielen teplota ale aj vlhkosť z čoho sa potom počíta takzvaná [**pocitová teplota**](https://en.wikipedia.org/wiki/Heat_index), čo je relevatnejší ukazovateľ komfortu tela
- * zariadenie upozorňuje užívateľa na problém **zavolaním na telefón**
- * počítač kontroluje nielen to či je teplota na senzoroch v zdravom rozsahu, ale aj to či sa niektorý senzor nezasekol, alebo či je teplota ustálená 
- * k dispozícii je **webová aplikácia** ktorá zobrazuje informácie Teplomera a ponúka možnosti jeho nastavenia
-   * okrem iného, zobrazuje hlavne **teplotu a vlhkosť v jednotlivých boxoch**
-   * na **šetrenie batérie**, ktorá vydrží približne 24 hodín pri neustálom behu, je možné zvýšiť interval v akom má Teplomer merať a počítač sa potom sám vypne medzi týmito meraniami.
-   * na **šetrenie mobilných dát** je zase môžné prestaviť interval informovania
- 
+<img align="right" src="/.doc/inside.png" width="175"/><img align="right" src="/.doc/box.png" width="175"/>
 
-## Možnosť reálne vyskúšať <img align="right" src=".doc/screenshot.png" width="180" />
-Aplikácia je k dispozícii na vyskúšanie na adrese: https://87.197.183.237:5443/home <br>
-Na zobrazenie stránky je potrebné odsúhlasiť bezpečnostnú výnimku na certifikát.
+* Ak nameraná pocitová teplota v niektorom z boxov prekročí stanovené hranice, zariadenie spustí poplach tak, že 
+užívateľovi **zavolá na mobilný telefón**. _Táto funkcionalita je k dispozicii vďaka [**GSM/GPRS modulu**](https://www.waveshare.com/gsm-gprs-gnss-hat.htm)._
 
-Ak o to teda máte záujem a dáte mi vedieť, tak ja zapnem aj Teplomer, aby aplikácia zobrazovala reálne dáta. <br>
+* **Kontrola zdravosti prostredia je ošetrená od náhodných vplyvov okolia**. Namerané hodnoty na senzore nemusia stále odpovedať stavu v celom boxe. 
+Vietor na senzore, manipulácia s vozíkom, psí dych na senzore a ďalšie vplyvy môžu spôsobiť zavádzajúce výsledky meraní. 
+Preto sú merania vyhodnocované algoritmom ktorý pomáha predísť falošným poplachom alebo, naopak, prehliadnutiu kritických situácii.
 
-**Prihlasovacie údaje:** <br>
-meno: _teplomer_ <br>
-heslo: _Jk2;Ak1ma_ <br>
+<img align="left" src=".doc/app2.png" width="280" />
 
- 
-## Github Repository
+* Zariadenie zasiela informácie o svojom nastavení na webovú aplikáciu v pravidelných intervaloch. Vďaka tomu si užívateľ môže 
+kedykoľvek pohodlne **skontrolovať, že zariadenie funguje, a že je správne nastavené**. Okrem toho, aplikácia zobrazuje dalšie užitočné 
+informácie, najmä aktuálne namerané hodnoty v každom boxe.
+
+* Počas štandardnej prevádzky nie je k dispozícii pripojenie na elektrickú sieť, preto je zariadenie napájané z vlastnej batérie. 
+Spotreba batérie je nízka, vydrží približne 24 hodín pri neustále zapnutom zariadení. Preteky ale trvajú často dlhšie. 
+Okrem ľahko vymeniteľnej náhradnej batérie je preto k dispozícii **funkcia šetrenia batérie**. Štandardne, sa kontrola boxov vykoná 12-krát za minútu, 
+čo ale vo väčšine prípadov nie je nevyhnutne potrebné. Túto frekvenciu je preto možné znížiť, a už pri frekvencii 1 kontrola za 3 minúty 
+sa zariadenie samé vypína medzi meraniami, čím sa šetrí batéria. 
+_Táto funkcionalita je k dispozicii vďaka modulu [**WittyPi**](http://www.uugear.com/product/wittypi2)._
+
+* Podobným spôsobom je umožnené **šetrenie mobilných dát**, ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. 
+Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
+<br><br><br><br><br><br><br>
+
+ ## Github Repository
 V tomto repository nájdete kód celého projektu:
-* [Zariadenie](https://github.com/MarekDrabik/Teplomer/tree/master/Zariadenie) - celý kód Teplomera, teda toho zariadenia ktoré je vložené do prívesného vozíka (Python)
-* [Server](https://github.com/MarekDrabik/Teplomer/tree/master/Server) - backend kód servera ktorý beží doma na druhom Raspberry Pi (Node.js) 
-* [Server/public](https://github.com/MarekDrabik/Teplomer/tree/master/Server/public) - frontend webová aplikácia (Javascript, html, css)
+* [Zariadenie](https://github.com/MarekDrabik/Teplomer/tree/master/Zariadenie) - kód hlavného zariadenia (Python)
+* [Server](https://github.com/MarekDrabik/Teplomer/tree/master/Server) - kód servera, ktorý umožňuje komunikáciu medzi zariadením a webovou aplikáciou (Node.js) 
+* [Server/public](https://github.com/MarekDrabik/Teplomer/tree/master/Server/public) - kód webovej aplikácie (Javascript, html, css)
 
-
-## Detailný popis Web Aplikácie
-
-1. Web aplikácia zobrazuje základné informácie o stave vo vozíku.
-
-<img float="center" src=".doc/informacieApp.png" />
-
-2. Ponúka možnosť zmeniť nastavenia Teplomera.<br>
-_Zmenené hodnoty blikajú nazeleno v pozadí so súčastným nastavením. Nastavenia sa odosielajú rázovo tlačidlom SEND a potom čakajú na serveri kým ich Teplomer neprevezme._
-   
-<img float="center" src=".doc/instrukcieApp.png" />
