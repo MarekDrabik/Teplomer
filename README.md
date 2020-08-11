@@ -1,4 +1,4 @@
-# Teplomer IOT - zariadenie na monitorovanie teploty v psích boxoch
+# Teplomer - zariadenie na monitorovanie bezpečnej teploty v psích boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
 Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa, napríklad, aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
@@ -43,7 +43,7 @@ _Táto funkcionalita je k dispozicii vďaka modulu [**WittyPi**](http://www.uuge
 
 * Podobným spôsobom je umožnené **šetrenie mobilných dát**, ktoré sú spotrebuvávané pri komunikácii medzi aplikáciou a zariadením. 
 Užívateľ má možnosť frekvenciu tejto komunikácie zmeniť, čím priamo ovplyvňuje spotrebu dát.
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
  ## Github Repository
 V tomto repository nájdete kód celého projektu:
