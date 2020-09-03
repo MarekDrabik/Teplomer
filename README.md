@@ -1,4 +1,4 @@
-# Teplomer - zariadenie na monitorovanie bezpečnej teploty v psích boxoch
+# Zariadenie na monitorovanie tepelného komfortu psov v boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
 Toto zariadenie som vyrobil pre svojho brata, ktorý sa zúčastňuje pretekov psích záprahov. Na prevoz a ubytovanie psov na podujatí používa prívesný vozík s nadstavbou, kde majú psy svoje boxy. Tieto boxy sú dobre tepelne izolované na zimné obdobie, čo ale vytvára riziko prehriatia psa v teplejšom počasí. Teplotu teda treba pravidelne kontrolovať a regulovať otváraním dverí. Teplota v boxe ale nezávisí len od vonkajšieho počasia, zvýši sa, napríklad, aj keď je pes nervózny, čo majiteľ nedokáže predvídať.
