@@ -1,4 +1,4 @@
-*(Presentation available in slovak language only)*
+*(Presentation available in Slovak language only)*
 # Zariadenie na monitorovanie tepelného komfortu psov v boxoch
 
 <img align="right" src="/.doc/trailer.png" width="300">
